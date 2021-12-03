@@ -3,6 +3,8 @@
 # irb -r ./runner.rb
 # Runner.new(day: 1, part: 1, test: true).perform
 class Runner
+  attr_writer :test
+
   def initialize(day:, part:, test: false)
     @day = day
     @part = part
