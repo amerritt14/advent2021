@@ -13,12 +13,16 @@ class Runner
   end
 
   def perform(args = {})
-    "Day#{@day}::Part#{@part}".constantize.new(**args.merge(test: @test)).perform
+    klass(args).perform
   end
 
   # reload changes to the solution file without exiting IRB.
   def reload
     load "day_#{@day}/part_#{@part}/solution.rb"
+  end
+
+  def klass(args)
+    "Day#{@day}::Part#{@part}".constantize.new(**args.merge(test: @test))
   end
 end
 
