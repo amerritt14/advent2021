@@ -49,9 +49,7 @@ module Day6
     end
 
     def empty_mapping
-      h = {}
-      (0..8).each { |i| h[i] = 0 }
-      h
+      (0..8).each_with_object({}) { |i, o| o[i] = 0 }
     end
 
     def seed_school
