@@ -21,7 +21,7 @@ class Runner
     load "day_#{@day}/part_#{@part}/solution.rb"
   end
 
-  def klass(args)
+  def klass(args = {})
     "Day#{@day}::Part#{@part}".constantize.new(**args.merge(test: @test))
   end
 end
